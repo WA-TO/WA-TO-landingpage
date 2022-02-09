@@ -231,7 +231,7 @@ https://templatemo.com/tm-540-lava-landing-page
                     <!-- ***** Contact Form Start ***** -->
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="contact-form">
-                            <form id="contact" action="" method="post">
+                            <form id="contact" action="" method="POST">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-12">
                                         <fieldset>
@@ -298,6 +298,31 @@ https://templatemo.com/tm-540-lava-landing-page
 
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAQdMRzfjTe5kAvc4ZbhNqTJSssbfepiPI",
+          authDomain: "wa-to-aeb6c.firebaseapp.com",
+          databaseURL: "https://wa-to-aeb6c-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "wa-to-aeb6c",
+          storageBucket: "wa-to-aeb6c.appspot.com",
+          messagingSenderId: "497588726274",
+          appId: "1:497588726274:web:3d804d0b981a83a430d51b",
+          measurementId: "G-2CEST85CLY"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
 
 </body>
 </html>
