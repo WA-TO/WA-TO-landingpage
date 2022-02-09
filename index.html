@@ -320,8 +320,38 @@ https://templatemo.com/tm-540-lava-landing-page
         };
       
         // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
+        firebase.initializeApp(firebaseConfig);
+ 
+ var messagesRef = firebase.database()
+     .ref('Collected Data');
+  
+ document.getElementById('contactForm')
+     .addEventListener('submit', submitForm);
+
+ function submitForm(e) {
+     e.preventDefault();
+
+     // Get values
+     var name = getInputVal('name');
+     var email = getInputVal('email');
+
+     saveMessage(name, email);
+     document.getElementById('contactForm').reset();
+ }
+
+ // Function to get get form values
+ function getInputVal(id) {
+     return document.getElementById(id).value;
+ }
+
+ // Save message to firebase
+ function saveMessage(name, email) {
+     var newMessageRef = messagesRef.push();
+     newMessageRef.set({
+         name: name,
+         email: email,
+     });
+ }
       </script>
 
 </body>
